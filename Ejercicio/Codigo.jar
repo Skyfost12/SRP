@@ -1,0 +1,51 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Iterator;
+
+class Library {
+    private List<String[]> books;
+    private List<String[]> users;
+    private List<String[]> loans;
+
+    public Library() {
+        this.books = new ArrayList<>();
+        this.users = new ArrayList<>();
+        this.loans = new ArrayList<>();
+    }
+
+    public void addBook(String title, String author, int copies) {
+        books.add(new String[]{title, author, String.valueOf(copies)});
+    }
+
+    public void addUser(String name, String id, String email) {
+        users.add(new String[]{name, id, email});
+    }
+
+    public boolean loanBook(String userId, String bookTitle) {
+        for (String[] book : books) {
+            if (book[0].equals(bookTitle) && Integer.parseInt(book[2]) > 0) {
+                book[2] = String.valueOf(Integer.parseInt(book[2]) - 1);
+                loans.add(new String[]{userId, bookTitle});
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean returnBook(String userId, String bookTitle) {
+        Iterator<String[]> iterator = loans.iterator();
+        while (iterator.hasNext()) {
+            String[] loan = iterator.next();
+            if (loan[0].equals(userId) && loan[1].equals(bookTitle)) {
+                iterator.remove();
+                for (String[] book : books) {
+                    if (book[0].equals(bookTitle)) {
+                        book[2] = String.valueOf(Integer.parseInt(book[2]) + 1);
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+}
