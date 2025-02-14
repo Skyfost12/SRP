@@ -33,6 +33,7 @@ print(OrderInstance.GenerateInvoice())
 OrderInstance.SendConfirmationEmail("customer@example.com")
 
 
+
 # Correcto
 class Order:
     def __init__(self, Items):
