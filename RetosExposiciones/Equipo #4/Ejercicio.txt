@@ -1,0 +1,18 @@
+Se debe desarrollar un sistema de gestión para una biblioteca que permita manejar distintos
+ aspectos clave, como el registro de libros, la administración de usuarios y la gestión de 
+ préstamos.
+
+Requisitos del sistema:
+-Registro de libros: El sistema debe permitir agregar nuevos libros, almacenando información básica 
+como el título, el autor y el número de copias disponibles.
+
+-Registro de usuarios: Se debe posibilitar la incorporación de nuevos usuarios, registrando datos 
+como el nombre, el número de identificación y el correo electrónico.
+Gestión de préstamos: El sistema debe permitir que los usuarios tomen libros en préstamo y los 
+devuelvan posteriormente.
+
+
+Instrucciones de desarrollo:
+Refactorización del código: Modificar la estructura del código para 
+dividir estas responsabilidades en clases separadas, aplicando el Principio de Responsabilidad
+ Única (SRP).
