@@ -81,8 +81,6 @@ public class Solucion {
                 System.out.println("Opción inválida");
                 break;
         }
-
-        
         //Procesa el pago
         OrderService orderService = new OrderService(paymentService);
         orderService.processOrder(amount);
