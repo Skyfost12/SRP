@@ -1,0 +1,31 @@
+<div class="container">
+  <h2>Sistema de Nómina</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Salario</th>
+        <th>Impuestos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let empleado of empleados">
+        <td>{{ empleado.id }}</td>
+        <td>{{ empleado.nombre }}</td>
+        <td>${{ empleado.salario }}</td>
+        <td>${{ impuestos[empleado.id - 1] }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="btn btn-primary" (click)="procesarNomina()">Procesar Nómina</button>
+
+  <div *ngIf="pagos.length > 0" class="resultados">
+    <h3>Resultados de Pago</h3>
+    <ul>
+      <li *ngFor="let pago of pagos">{{ pago }}</li>
+    </ul>
+  </div>
+</div>
