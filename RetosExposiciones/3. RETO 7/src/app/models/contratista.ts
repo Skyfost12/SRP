@@ -20,6 +20,11 @@ export class Contratista extends Empleado {
     return `La factura ya fue enviada por el contratista ${this.nombre}.`;
   }
 
+  /** 
+  procesarPago(): string {
+    throw Error("Al contratista no se le puede procesar el pago")
+  }*/
+
   override calcularImpuestos(): number {
     return this.salario * 0.05;
   }
